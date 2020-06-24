@@ -29,8 +29,8 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pdp_photo"
             android:layout_marginTop="20sp"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
             app:civ_border_width="2dp"
             android:layout_gravity="center"
             app:civ_border_color="#FF909090"/>
