@@ -26,6 +26,11 @@ public class UserAdapter extends BaseAdapter {
     }
 
 
+    public void update (ArrayList <User> result) {
+        users = new ArrayList<>();
+        users.addAll(result);
+        notifyDataSetChanged();
+    }
     @Override
     public int getCount() {
         return users.size();
@@ -54,6 +59,11 @@ public class UserAdapter extends BaseAdapter {
         User user = (User)getItem(position);
         viewHolder.bind(user);
         return itemView;
+    }
+
+    public void getFilter() {
+
+
     }
 
     private class ViewHolder {

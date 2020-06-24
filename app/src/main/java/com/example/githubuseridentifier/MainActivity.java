@@ -2,6 +2,7 @@ package com.example.githubuseridentifier;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -18,6 +19,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private String [] dataLocation;
     private ArrayList <User> users;
     private int delay = 2000;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        ListView listView = findViewById(R.id.lv_listview);
+        listView = findViewById(R.id.lv_listview);
 
         adapter = new UserAdapter(this);
         listView.setAdapter(adapter);
@@ -83,6 +86,57 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+              //  adapter.getFilter().filter(s);
+                ArrayList <User> result = new ArrayList<>();
+
+                for (User x: users ) {
+                    if (x.getName().contains(s) || x.getUsername().contains(s) || x.getLocation().contains(s))
+                        result.add(x);
+                }
+
+                (( UserAdapter) listView.getAdapter()).update(result);
+
+                return false;
+            }
+
+
+        });
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.beranda :
+                return true;
+            case R.id.keluar :
+                System.exit(1);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
     private void addItem() {

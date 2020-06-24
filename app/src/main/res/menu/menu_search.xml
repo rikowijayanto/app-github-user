@@ -2,14 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id = "@+id/search"
-        android:title="Search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:id = "@+id/beranda"
+        android:title="About"
+        app:showAsAction="never"/>
+
+    <item
+        android:id = "@+id/keluar"
+        android:title="Quit"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_search"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always">
-
-
-        >
-    </item>
+        app:showAsAction="always|collapseActionView"
+        android:icon="@android:drawable/ic_menu_search"
+        android:tooltipText="Input keywords"
+        android:title="Search" />
 
 </menu>
