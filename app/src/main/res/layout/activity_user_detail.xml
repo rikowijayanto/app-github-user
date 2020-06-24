@@ -199,7 +199,8 @@
                 android:width="110dp"
                 android:background="@color/colorPrimary"
                 android:textColor="@color/dasar"
-                android:text="Suka"/>
+                android:text="Suka"
+                android:id="@+id/btn_suka"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -208,7 +209,8 @@
                 android:layout_marginLeft="12dp"
                 android:background="@color/colorPrimary"
                 android:textColor="@color/dasar"
-                android:text="Tidak Suka" />
+                android:text="Tidak Suka"
+                android:id="@+id/btn_tidaksuka"/>
 
         </LinearLayout>
 

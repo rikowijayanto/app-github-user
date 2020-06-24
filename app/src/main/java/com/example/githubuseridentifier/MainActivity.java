@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -30,11 +32,14 @@ public class MainActivity extends AppCompatActivity {
     private TypedArray dataPhoto;
     private String [] dataLocation;
     private ArrayList <User> users;
+    private int delay = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         if (Build.VERSION.SDK_INT >= 21) {
             //getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.dark_nav)); // Navigation bar the soft bottom of some phones like nexus and some Samsung note series
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         prepare();
         addItem();
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
