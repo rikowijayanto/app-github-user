@@ -35,10 +35,6 @@ public class UserDetail extends AppCompatActivity {
 
         User users = getIntent().getParcelableExtra(UserDetail.EXTRA_USER);
 
-        System.out.println("\n{\n   [\n        Name : "+users.getName()+"\n        Username : "+users.getUsername()+"\n        Follower : "+users.getLocation()
-        );
-
-
         nama.setText(users.getName());
         usernama.setText(users.getUsername());
         alamat.setText(users.getLocation());

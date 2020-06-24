@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Toast.makeText(MainActivity.this, users.get(i).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, users.get(i).getName()+" choosen", Toast.LENGTH_SHORT).show();
 
                 // parcellable setting
                 User user_bawa = new User ();
@@ -61,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 user_bawa.setRepository(users.get(i).getRepository());
                 user_bawa.setFollowing(users.get(i).getFollowing());
                 user_bawa.setFollower(users.get(i).getFollower());
-                user_bawa.setCompany("Halo"+users.get(i).getCompany());
-
-                System.out.println("=============================COMPANY NAME===="+users.get(i).getCompany());
+                user_bawa.setCompany(users.get(i).getCompany());
 
                 Intent pdpUser = new Intent(MainActivity.this, UserDetail.class);
                 pdpUser.putExtra(UserDetail.EXTRA_USER, user_bawa);
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     private void addItem() {
 

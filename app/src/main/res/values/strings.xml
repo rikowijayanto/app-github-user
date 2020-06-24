@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github User Identifier</string>
+    <string name="app_name">Homepage</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
