@@ -128,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()) {
             case R.id.beranda :
+                Intent intent = new Intent(MainActivity.this, halaman_tentang.class);
+                startActivity(intent);
                 return true;
             case R.id.keluar :
                 System.exit(1);

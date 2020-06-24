@@ -4,26 +4,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/spalsh"
         android:label="GitApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".home" android:theme="@style/TaskMiss" >
+        <activity android:name=".halaman_tentang" android:label="About"></activity>
+        <activity
+            android:name=".home"
+            android:theme="@style/TaskMiss">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-        <activity android:name=".UserDetail"  android:label="User Detail" />
-
-        <activity android:name=".MainActivity" android:label="Homepage">
-
-        </activity>
+        <activity
+            android:name=".UserDetail"
+            android:label="User Detail" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Homepage"></activity>
     </application>
 
 </manifest>
