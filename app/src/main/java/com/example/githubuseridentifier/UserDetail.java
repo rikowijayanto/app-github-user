@@ -31,7 +31,6 @@ public class UserDetail extends AppCompatActivity {
         }
 
 
-
         CircleImageView gambar = findViewById(R.id.pdp_photo);
         TextView nama = findViewById(R.id.pdp_name);
         TextView usernama = findViewById(R.id.pdp_username);

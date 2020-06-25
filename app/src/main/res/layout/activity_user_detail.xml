@@ -3,7 +3,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,14 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
-
-        android:layout_marginLeft="2dp">
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pdp_name"
-            android:text="Nama Lengkap"
+            android:text="@string/nama_lengkap"
             android:textSize="32sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pdp_username"
-            android:text="Username"
+            android:text="@string/username_tag"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -67,12 +67,12 @@
                     android:id="@+id/pdp_repository"
                     android:textStyle="bold"
                     android:layout_gravity="center"
-                    android:textSize="22dp"/>
+                    android:textSize="22sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Repository"
+                    android:text="@string/repository_tag"
                     android:textSize="18sp"
                     android:layout_gravity="center"/>
 
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Repository"
+                    android:text="@string/following_tag"
                     android:id="@+id/pdp_following"
                     android:textStyle="bold"
                     android:layout_gravity="center"
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Repository"
+                    android:text="@string/follower_tag"
                     android:id="@+id/pdp_follower"
                     android:textStyle="bold"
                     android:layout_gravity="center"

@@ -8,13 +8,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -25,24 +23,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private UserAdapter adapter;
-    private String [] dataName;
-    private String [] dataUsername;
-    private String [] dataRepo;
-    private String [] dataFollowing;
-    private String [] dataFollower;
-    private String [] dataCompany;
-    private TypedArray dataPhoto;
-    private String [] dataLocation;
     private ArrayList <User> users;
-    private int delay = 2000;
+
+    private String [] dataName, dataUsername, dataRepo, dataFollowing, dataFollower, dataCompany, dataLocation;
+    private TypedArray dataPhoto;
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.colorPrimary)); // Navigation bar the soft bottom of some phones like nexus and some Samsung note series
@@ -93,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_search, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        SearchView searchView = (SearchView) searchItem.getActionView();
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -105,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-              //  adapter.getFilter().filter(s);
                 ArrayList <User> result = new ArrayList<>();
 
                 for (User x: users ) {

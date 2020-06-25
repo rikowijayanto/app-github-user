@@ -13,7 +13,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends BaseAdapter {
 
-    public Context context;
+    final Context context;
     public ArrayList<User> users = new ArrayList<>();
 
 
@@ -61,10 +61,6 @@ public class UserAdapter extends BaseAdapter {
         return itemView;
     }
 
-    public void getFilter() {
-
-
-    }
 
     private class ViewHolder {
 
